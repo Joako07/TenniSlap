@@ -19,7 +19,7 @@ import javax.swing.JOptionPane;
 public class DatosPlayer extends javax.swing.JFrame {
 
     String torneo = "", jugador1 = "", jugador2 = "", destrezaJugador1 = "", destrezaJugador2 = "", sets;
-    int desJuga1, desJuga2;
+
     /**
      * Creates new form DatosPlayer
      */
@@ -154,11 +154,9 @@ public class DatosPlayer extends javax.swing.JFrame {
         destrezaJugador1 = txt_destrezaJugador1.getText().trim();
         destrezaJugador2 = txt_destrezaJugador2.getText().trim();
         sets = cmb_sets.getSelectedItem().toString();
+        desJuga1 = Integer.parseInt(destrezaJugador1);
+        desJuga2 = Integer.parseInt(destrezaJugador2);
 
-        desJuga1= validarDestreza(destrezaJugador1);
-        desJuga2 = validarDestreza(destrezaJugador2);
-       
-        //Valido los datos
         if (torneo.equals("")) {
             txt_nombreTorneo.setBackground(Color.red);
             validar++;
@@ -179,12 +177,11 @@ public class DatosPlayer extends javax.swing.JFrame {
             txt_destrezaJugador2.setBackground(Color.red);
             validar++;
         }
-
-        if (desJuga1 < 0 || desJuga1 > 100) {
+        if (desJuga1 < 1 || desJuga1 > 100) {
             txt_destrezaJugador1.setBackground(Color.red);
             validar = +10;
         }
-        if (desJuga2 < 0 || desJuga2 > 100) {
+        if (desJuga2 < 1 || desJuga2 > 100) {
             txt_destrezaJugador2.setBackground(Color.red);
             validar = +10;
         }
@@ -197,16 +194,12 @@ public class DatosPlayer extends javax.swing.JFrame {
             Juego.jLabel_jugador1.setText(jugador1);
             Juego.jLabel_jugador2.setText(jugador2);
             Juego.jLabel_sets.setText(sets);
-            Juego.jLabel_destrezaJugador1.setText(destrezaJugador1);
-            Juego.jLabel_destrezaJugador2.setText(destrezaJugador2);
 
-            this.dispose();
-        } else if (validar > 0 && validar < 10) {
+        } else if (validar > 4 && validar < 10) {
             JOptionPane.showMessageDialog(null, "Debes completar todos los campos");
-        } else {
-            JOptionPane.showMessageDialog(null, "La destreza de los Jugadores debe ser entre 0 y 100");
-        }
+      }
     }//GEN-LAST:event_jButton_jugarActionPerformed
+    
 
     /**
      * @param args the command line arguments
@@ -259,27 +252,4 @@ public class DatosPlayer extends javax.swing.JFrame {
     private javax.swing.JTextField txt_jugador2;
     private javax.swing.JTextField txt_nombreTorneo;
     // End of variables declaration//GEN-END:variables
-public void Limpiar() {
-        txt_nombreTorneo.setText("");
-        txt_nombreTorneo.setBackground(new Color(255, 255, 153));
-        txt_jugador1.setText("");
-        txt_jugador1.setBackground(new Color(255, 255, 153));
-        txt_jugador2.setText("");
-        txt_jugador2.setBackground(new Color(255, 255, 153));
-        txt_destrezaJugador1.setText("");
-        txt_destrezaJugador1.setBackground(new Color(255, 255, 153));
-        txt_destrezaJugador2.setText("");
-        txt_destrezaJugador2.setBackground(new Color(255, 255, 153));
-    }
-
-    public int validarDestreza(String des){
-       int result = 0;
-        try {
-            if(des != null){
-             result = Integer.parseInt(des);
-            }
-        } catch (NumberFormatException e) {
-        }
-        return result;
-    }   
 }
