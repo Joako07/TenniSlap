@@ -192,7 +192,20 @@ public class Juego extends javax.swing.JFrame {
                             + jugador1 + ": " + juegoJugador1
                             + jugador2 + ": " + juegoJugador2);
                 } else if (puntoJugad1 == 40 && puntoJugad2 == 40) {
-                    deuce();
+                    int desempate = deuce(jug1, jug2, desJuga1, desJuga2, saque, jugador1, jugador2);
+                    if (desempate == 1) {
+                        juegoJugador1++;
+                        // hacer una pila aca
+                        JOptionPane.showMessageDialog(null, "El ganador de este juego es: " + jugador1
+                                + jugador1 + ": " + juegoJugador1
+                                + jugador2 + ": " + juegoJugador2);
+                    } else {
+                        juegoJugador2++;
+                        // hacer una pila aca
+                        JOptionPane.showMessageDialog(null, "El ganador de este juego es: " + jugador2
+                                + jugador1 + ": " + juegoJugador1
+                                + jugador2 + ": " + juegoJugador2);
+                    }
                 }
 
                 //Determino al ganador del set
@@ -257,41 +270,46 @@ public class Juego extends javax.swing.JFrame {
     int deuce(int jug1, int jug2, int desJuga1, int desJuga2, int saque, String jugador1, String jugador2) {
         int puntJugador1 = 0, puntoJugador2 = 0;
 
-do{
-        if (saque == 1) {
-            do {
-                jug1 = (int) Math.random() * desJuga1;
-                jug2 = (int) Math.random() * desJuga2;
-            } while (jug1 != jug2);
+        do {
+            if (saque == 1) {
+                do {
+                    jug1 = (int) Math.random() * desJuga1;
+                    jug2 = (int) Math.random() * desJuga2;
+                } while (jug1 != jug2);
 
-            if (jug1 > jug2) {
-                JOptionPane.showMessageDialog(null, "(Ad-in) Ventaja para: " + jugador1);
-                puntJugador1++;
-                saque = 1;
+                if (jug1 > jug2) {
+                    JOptionPane.showMessageDialog(null, "(Ad-in) Ventaja para: " + jugador1);
+                    puntJugador1++;
+                    saque = 1;
+                } else {
+                    JOptionPane.showMessageDialog(null, "(Ad-Out) Ventaja para: " + jugador2);
+                    puntoJugador2++;
+                    saque = 2;
+                }
             } else {
-                JOptionPane.showMessageDialog(null, "(Ad-Out) Ventaja para: " + jugador2);
-                puntoJugador2++;
-                saque = 2;
+                do {
+                    jug1 = (int) Math.random() * desJuga1;
+                    jug2 = (int) Math.random() * desJuga2;
+                } while (jug1 != jug2);
+
+                if (jug1 > jug2) {
+                    JOptionPane.showMessageDialog(null, "(Ad-Out) Ventaja para: " + jugador1);
+                    puntJugador1++;
+                    saque = 1;
+                } else {
+                    JOptionPane.showMessageDialog(null, "(Ad-In) Ventaja para: " + jugador2);
+                    puntoJugador2++;
+                    saque = 2;
+                }
+
             }
+        } while (puntJugador1 == puntoJugador2 || puntJugador1 == puntoJugador2 + 1 || puntoJugador2 == puntJugador1 + 1);
+
+        //Defino el ganador de la ventaja
+        if (puntJugador1 > puntoJugador2) {
+            return 1;
         } else {
-            do {
-                jug1 = (int) Math.random() * desJuga1;
-                jug2 = (int) Math.random() * desJuga2;
-            } while (jug1 != jug2);
-
-            if (jug1 > jug2) {
-                JOptionPane.showMessageDialog(null, "(Ad-Out) Ventaja para: " + jugador1);
-                puntJugador1++;
-                saque = 1;
-            } else {
-                JOptionPane.showMessageDialog(null, "(Ad-In) Ventaja para: " + jugador2);
-                puntoJugador2++;
-                saque = 2;
-            }
-
+            return 2;
         }
-      }while(puntJugador1 > puntoJugador2+1 || puntoJugador2 > puntJugador1+1 );
-       
-
     }
 }
