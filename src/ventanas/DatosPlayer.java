@@ -193,7 +193,7 @@ public class DatosPlayer extends javax.swing.JFrame {
             Juego juego = new Juego();
             juego.setVisible(true);
 
-            Juego.jLabel_torneaName.setText(txt_nombreTorneo.getText().trim());
+            Juego.jLabel_nombreTorneo.setText(txt_nombreTorneo.getText().trim());
             Juego.jLabel_jugador1.setText(jugador1);
             Juego.jLabel_jugador2.setText(jugador2);
             Juego.jLabel_sets.setText(sets);

@@ -7,6 +7,7 @@ package ventanas;
 
 import java.awt.Image;
 import java.awt.Toolkit;
+import java.util.Random;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
@@ -17,8 +18,7 @@ import javax.swing.JOptionPane;
  */
 public class Juego extends javax.swing.JFrame {
 
-    String  torneo = "", jugador1 = "", jugador2 = "",sets="",destreazaJugador1="",destrezaJugador2="";
-     int desJuga1, desJuga2;
+    String torneo = "", jugador1 = "", jugador2 = "", sets = "", destreazaJugador1 = "", destrezaJugador2 = "";
 
     /**
      * Creates new form Juego
@@ -30,8 +30,6 @@ public class Juego extends javax.swing.JFrame {
         setResizable(false);
         setTitle("TenniSlap");
         setLocationRelativeTo(null);
-        
-        
 
         ImageIcon wallpaper = new ImageIcon("src/image/cancha.jpg");
         Icon icono = new ImageIcon(wallpaper.getImage().getScaledInstance(jLabel_Wallpaper.getWidth(),
@@ -46,8 +44,6 @@ public class Juego extends javax.swing.JFrame {
         Image retValue = Toolkit.getDefaultToolkit().getImage(ClassLoader.getSystemResource("image/ball.png"));
         return retValue;
     }
-    
-    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -58,12 +54,15 @@ public class Juego extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jLabel_ganadorDelGame = new javax.swing.JLabel();
         jLabel_sets = new javax.swing.JLabel();
-        jLabel_torneaName = new javax.swing.JLabel();
+        jLabel_nombreTorneo = new javax.swing.JLabel();
         jLabel_jugador1 = new javax.swing.JLabel();
         jLabel_destrezaJugador1 = new javax.swing.JLabel();
+        jLabel_puntosJugador1 = new javax.swing.JLabel();
         jLabel_jugador2 = new javax.swing.JLabel();
         jLabel_destrezaJugador2 = new javax.swing.JLabel();
+        jLabel_puntosJugador2 = new javax.swing.JLabel();
         jButton_jugar = new javax.swing.JButton();
         jLabel_Wallpaper = new javax.swing.JLabel();
 
@@ -71,13 +70,16 @@ public class Juego extends javax.swing.JFrame {
         setIconImage(getIconImage());
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        jLabel_ganadorDelGame.setText("jLabel1");
+        getContentPane().add(jLabel_ganadorDelGame, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 130, -1, -1));
+
         jLabel_sets.setFont(new java.awt.Font("Broadway", 1, 18)); // NOI18N
         jLabel_sets.setForeground(new java.awt.Color(255, 255, 153));
         getContentPane().add(jLabel_sets, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 100, 220, 30));
 
-        jLabel_torneaName.setFont(new java.awt.Font("Broadway", 1, 18)); // NOI18N
-        jLabel_torneaName.setForeground(new java.awt.Color(255, 255, 153));
-        getContentPane().add(jLabel_torneaName, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 100, 200, 30));
+        jLabel_nombreTorneo.setFont(new java.awt.Font("Broadway", 1, 18)); // NOI18N
+        jLabel_nombreTorneo.setForeground(new java.awt.Color(255, 255, 153));
+        getContentPane().add(jLabel_nombreTorneo, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 100, 200, 30));
 
         jLabel_jugador1.setFont(new java.awt.Font("Showcard Gothic", 1, 14)); // NOI18N
         jLabel_jugador1.setForeground(new java.awt.Color(51, 51, 255));
@@ -87,6 +89,10 @@ public class Juego extends javax.swing.JFrame {
         jLabel_destrezaJugador1.setForeground(new java.awt.Color(51, 51, 255));
         getContentPane().add(jLabel_destrezaJugador1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 430, 130, 20));
 
+        jLabel_puntosJugador1.setFont(new java.awt.Font("Showcard Gothic", 1, 14)); // NOI18N
+        jLabel_puntosJugador1.setForeground(new java.awt.Color(51, 51, 255));
+        getContentPane().add(jLabel_puntosJugador1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 450, 130, 20));
+
         jLabel_jugador2.setFont(new java.awt.Font("Showcard Gothic", 1, 14)); // NOI18N
         jLabel_jugador2.setForeground(new java.awt.Color(255, 0, 0));
         getContentPane().add(jLabel_jugador2, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 410, 120, 20));
@@ -94,6 +100,10 @@ public class Juego extends javax.swing.JFrame {
         jLabel_destrezaJugador2.setFont(new java.awt.Font("Showcard Gothic", 1, 14)); // NOI18N
         jLabel_destrezaJugador2.setForeground(new java.awt.Color(255, 0, 0));
         getContentPane().add(jLabel_destrezaJugador2, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 430, 120, 20));
+
+        jLabel_puntosJugador2.setFont(new java.awt.Font("Showcard Gothic", 1, 14)); // NOI18N
+        jLabel_puntosJugador2.setForeground(new java.awt.Color(255, 0, 0));
+        getContentPane().add(jLabel_puntosJugador2, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 450, 120, 20));
 
         jButton_jugar.setBackground(new java.awt.Color(255, 255, 153));
         jButton_jugar.setFont(new java.awt.Font("sansserif", 1, 18)); // NOI18N
@@ -110,35 +120,88 @@ public class Juego extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton_jugarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_jugarActionPerformed
-    
-    int band=1;
-    sets=jLabel_sets.getText();
-    jugador1=jLabel_jugador1.getText();
-    jugador2=jLabel_jugador2.getText();
-    torneo=jLabel_torneaName.getText();
-    destreazaJugador1=jLabel_destrezaJugador1.getText();
-    destrezaJugador2=jLabel_destrezaJugador2.getText();
-    desJuga1=Integer.parseInt(destreazaJugador1);
-    desJuga2=Integer.parseInt(destrezaJugador2);
 
-     //Indico a cuantos sets es
-     if(sets.equals("Al mejor de 3")){
-     do{
-     //Mostrar de quien es el saque
-       if(band%2==0){
-           JOptionPane.showMessageDialog(null, "Saque de "+ jugador1);
-       }else{
-           JOptionPane.showMessageDialog(null, "Saque de "+ jugador2);
-       }
-        
+        int band = 1, saque = 1, puntoJugad1 = 0, puntoJugad2 = 0, juegoJugador1 = 0, juegoJugador2 = 0, desJuga1, desJuga2, jug1, jug2;
+        sets = jLabel_sets.getText();
+        jugador1 = jLabel_jugador1.getText();
+        jugador2 = jLabel_jugador2.getText();
+        torneo = jLabel_nombreTorneo.getText();
+        destreazaJugador1 = jLabel_destrezaJugador1.getText();
+        destrezaJugador2 = jLabel_destrezaJugador2.getText();
+        desJuga1 = Integer.parseInt(destreazaJugador1);
+        desJuga2 = Integer.parseInt(destrezaJugador2);
 
+        //Indico a cuantos sets es
+        if (sets.equals("Al mejor de 3")) {
 
+            do {
+                //Muestro quien saca
+                if (saque == 1) {
+                    JOptionPane.showMessageDialog(null, "Saque de " + jugador1);
+                } else {
+                    JOptionPane.showMessageDialog(null, "Saque de " + jugador2);
+                }
 
+                //Comienza el juego
+                //Determino al ganador del punto
+                do {
+                    jug1 = (int) Math.random() * desJuga1;
+                    jug2 = (int) Math.random() * desJuga2;
+                } while (jug1 != jug2);
 
-       }while(band < 4);        
-     }else{
-     
-     }
+                //Le sumo el punto al ganador
+                if (jug1 > jug2) {
+                    if (puntoJugad1 < 30) {
+                        puntoJugad1 += 15;
+                        jLabel_puntosJugador1.setText(Integer.toString(puntoJugad1));
+                        saque = 1;
+                    } else if (puntoJugad1 == 30) {
+                        puntoJugad1 += 10;
+                        jLabel_puntosJugador1.setText(Integer.toString(puntoJugad1));
+                        saque = 1;
+                    } else if (puntoJugad1 > 30) {
+                        puntoJugad1 += 10;
+                        saque = 1;
+                    }
+                } else if (jug2 > jug1) {
+                    if (puntoJugad2 < 30) {
+                        puntoJugad2 += 15;
+                        jLabel_puntosJugador2.setText(Integer.toString(puntoJugad2));
+                        saque = 2;
+                    } else if (puntoJugad2 == 30) {
+                        puntoJugad2 += 10;
+                        jLabel_puntosJugador2.setText(Integer.toString(puntoJugad2));
+                        saque = 2;
+                    } else if (puntoJugad2 > 30) {
+                        puntoJugad2 += 10;
+                        saque = 2;
+                    }
+                }
+
+                //Determino al ganador del juego
+                if (puntoJugad1 > 40 && puntoJugad2 < 40) {
+                    juegoJugador1++;
+                    // hacer una pila aca
+                    JOptionPane.showMessageDialog(null, "El ganador de este juego es: " + jugador1
+                            + jugador1 + ": " + juegoJugador1
+                            + jugador2 + ": " + juegoJugador2);
+                } else if (puntoJugad2 > 40 && puntoJugad1 < 40) {
+                    juegoJugador2++;
+                    // hacer una pila aca
+                    JOptionPane.showMessageDialog(null, "El ganador de este juego es: " + jugador2
+                            + jugador1 + ": " + juegoJugador1
+                            + jugador2 + ": " + juegoJugador2);
+                } else if (puntoJugad1 == 40 && puntoJugad2 == 40) {
+                    deuce();
+                }
+
+                //Determino al ganador del set
+            } while (band < 4);
+        } else {
+            do {
+            } while (band < 6);
+
+        }
     }//GEN-LAST:event_jButton_jugarActionPerformed
 
     /**
@@ -172,7 +235,7 @@ public class Juego extends javax.swing.JFrame {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new Juego().setVisible(true);
-                
+
             }
         });
     }
@@ -182,9 +245,53 @@ public class Juego extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel_Wallpaper;
     public static javax.swing.JLabel jLabel_destrezaJugador1;
     public static javax.swing.JLabel jLabel_destrezaJugador2;
+    private javax.swing.JLabel jLabel_ganadorDelGame;
     public static javax.swing.JLabel jLabel_jugador1;
     public static javax.swing.JLabel jLabel_jugador2;
+    public static javax.swing.JLabel jLabel_nombreTorneo;
+    public static javax.swing.JLabel jLabel_puntosJugador1;
+    public static javax.swing.JLabel jLabel_puntosJugador2;
     public static javax.swing.JLabel jLabel_sets;
-    public static javax.swing.JLabel jLabel_torneaName;
     // End of variables declaration//GEN-END:variables
+
+    int deuce(int jug1, int jug2, int desJuga1, int desJuga2, int saque, String jugador1, String jugador2) {
+        int puntJugador1 = 0, puntoJugador2 = 0;
+
+do{
+        if (saque == 1) {
+            do {
+                jug1 = (int) Math.random() * desJuga1;
+                jug2 = (int) Math.random() * desJuga2;
+            } while (jug1 != jug2);
+
+            if (jug1 > jug2) {
+                JOptionPane.showMessageDialog(null, "(Ad-in) Ventaja para: " + jugador1);
+                puntJugador1++;
+                saque = 1;
+            } else {
+                JOptionPane.showMessageDialog(null, "(Ad-Out) Ventaja para: " + jugador2);
+                puntoJugador2++;
+                saque = 2;
+            }
+        } else {
+            do {
+                jug1 = (int) Math.random() * desJuga1;
+                jug2 = (int) Math.random() * desJuga2;
+            } while (jug1 != jug2);
+
+            if (jug1 > jug2) {
+                JOptionPane.showMessageDialog(null, "(Ad-Out) Ventaja para: " + jugador1);
+                puntJugador1++;
+                saque = 1;
+            } else {
+                JOptionPane.showMessageDialog(null, "(Ad-In) Ventaja para: " + jugador2);
+                puntoJugador2++;
+                saque = 2;
+            }
+
+        }
+      }while(puntJugador1 > puntoJugador2+1 || puntoJugador2 > puntJugador1+1 );
+       
+
+    }
 }
