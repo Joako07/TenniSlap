@@ -38,7 +38,7 @@ public class Cola {
     }
     
     //Método para mostrar contenido de la cola min9:22
-    public void mostrarContenido(){
+    public String mostrarContenido(){
          Nodo recorrido = inicioCola;
          String colaInvertida = "";
          
@@ -49,10 +49,10 @@ public class Cola {
          
          String cadena[] = cola.split(" ");
     
-         for (int i = cadena.length -1 ; i >=0; i--){
-             colaInvertida += " ";
+         for (int i =0 ; i <= cadena.length -1 ; i++){
+             colaInvertida += " " + cadena[i];
          }
-         JOptionPane.showMessageDialog(null, colaInvertida);
-         cola = "";
+         cola ="";
+         return colaInvertida;      
     }
 }
