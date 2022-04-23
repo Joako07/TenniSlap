@@ -127,7 +127,7 @@ public class DatosPlayer extends javax.swing.JFrame {
 
         jButton_jugar.setBackground(new java.awt.Color(255, 255, 153));
         jButton_jugar.setFont(new java.awt.Font("sansserif", 1, 18)); // NOI18N
-        jButton_jugar.setText("Jugar");
+        jButton_jugar.setText("Iniciar");
         jButton_jugar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton_jugarActionPerformed(evt);

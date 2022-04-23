@@ -54,8 +54,9 @@ public class Juego extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel_ganadorDelGame = new javax.swing.JLabel();
         jLabel_sets = new javax.swing.JLabel();
+        jLabel_ganador = new javax.swing.JLabel();
+        jLabel_numeroDeSet = new javax.swing.JLabel();
         jLabel_nombreTorneo = new javax.swing.JLabel();
         jLabel_jugador1 = new javax.swing.JLabel();
         jLabel_destrezaJugador1 = new javax.swing.JLabel();
@@ -70,44 +71,49 @@ public class Juego extends javax.swing.JFrame {
         setIconImage(getIconImage());
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel_ganadorDelGame.setText("jLabel1");
-        getContentPane().add(jLabel_ganadorDelGame, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 130, -1, -1));
-
         jLabel_sets.setFont(new java.awt.Font("Broadway", 1, 18)); // NOI18N
         jLabel_sets.setForeground(new java.awt.Color(255, 255, 153));
         getContentPane().add(jLabel_sets, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 100, 220, 30));
+
+        jLabel_ganador.setFont(new java.awt.Font("Yu Gothic UI", 1, 18)); // NOI18N
+        jLabel_ganador.setForeground(new java.awt.Color(255, 255, 153));
+        getContentPane().add(jLabel_ganador, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 140, 380, 30));
+
+        jLabel_numeroDeSet.setFont(new java.awt.Font("Yu Gothic UI", 1, 18)); // NOI18N
+        jLabel_numeroDeSet.setForeground(new java.awt.Color(255, 255, 153));
+        getContentPane().add(jLabel_numeroDeSet, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 160, 200, 30));
 
         jLabel_nombreTorneo.setFont(new java.awt.Font("Broadway", 1, 18)); // NOI18N
         jLabel_nombreTorneo.setForeground(new java.awt.Color(255, 255, 153));
         getContentPane().add(jLabel_nombreTorneo, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 100, 200, 30));
 
-        jLabel_jugador1.setFont(new java.awt.Font("Showcard Gothic", 1, 14)); // NOI18N
+        jLabel_jugador1.setFont(new java.awt.Font("Showcard Gothic", 1, 20)); // NOI18N
         jLabel_jugador1.setForeground(new java.awt.Color(51, 51, 255));
-        getContentPane().add(jLabel_jugador1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 410, 130, 20));
+        getContentPane().add(jLabel_jugador1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 410, 210, 20));
 
-        jLabel_destrezaJugador1.setFont(new java.awt.Font("Showcard Gothic", 1, 14)); // NOI18N
+        jLabel_destrezaJugador1.setFont(new java.awt.Font("Showcard Gothic", 1, 20)); // NOI18N
         jLabel_destrezaJugador1.setForeground(new java.awt.Color(51, 51, 255));
-        getContentPane().add(jLabel_destrezaJugador1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 430, 130, 20));
+        getContentPane().add(jLabel_destrezaJugador1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 430, 170, 20));
 
-        jLabel_puntosJugador1.setFont(new java.awt.Font("Showcard Gothic", 1, 14)); // NOI18N
+        jLabel_puntosJugador1.setFont(new java.awt.Font("Showcard Gothic", 1, 20)); // NOI18N
         jLabel_puntosJugador1.setForeground(new java.awt.Color(51, 51, 255));
-        getContentPane().add(jLabel_puntosJugador1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 450, 130, 20));
+        getContentPane().add(jLabel_puntosJugador1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 450, 170, 20));
 
-        jLabel_jugador2.setFont(new java.awt.Font("Showcard Gothic", 1, 14)); // NOI18N
+        jLabel_jugador2.setFont(new java.awt.Font("Showcard Gothic", 1, 20)); // NOI18N
         jLabel_jugador2.setForeground(new java.awt.Color(255, 0, 0));
-        getContentPane().add(jLabel_jugador2, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 410, 120, 20));
+        getContentPane().add(jLabel_jugador2, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 410, 170, 20));
 
-        jLabel_destrezaJugador2.setFont(new java.awt.Font("Showcard Gothic", 1, 14)); // NOI18N
+        jLabel_destrezaJugador2.setFont(new java.awt.Font("Showcard Gothic", 1, 20)); // NOI18N
         jLabel_destrezaJugador2.setForeground(new java.awt.Color(255, 0, 0));
-        getContentPane().add(jLabel_destrezaJugador2, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 430, 120, 20));
+        getContentPane().add(jLabel_destrezaJugador2, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 430, 140, 20));
 
-        jLabel_puntosJugador2.setFont(new java.awt.Font("Showcard Gothic", 1, 14)); // NOI18N
+        jLabel_puntosJugador2.setFont(new java.awt.Font("Showcard Gothic", 1, 20)); // NOI18N
         jLabel_puntosJugador2.setForeground(new java.awt.Color(255, 0, 0));
-        getContentPane().add(jLabel_puntosJugador2, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 450, 120, 20));
+        getContentPane().add(jLabel_puntosJugador2, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 450, 140, 20));
 
         jButton_jugar.setBackground(new java.awt.Color(255, 255, 153));
         jButton_jugar.setFont(new java.awt.Font("sansserif", 1, 18)); // NOI18N
-        jButton_jugar.setText("Iniciar");
+        jButton_jugar.setText("Jugar");
         jButton_jugar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton_jugarActionPerformed(evt);
@@ -121,7 +127,7 @@ public class Juego extends javax.swing.JFrame {
 
     private void jButton_jugarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_jugarActionPerformed
 
-        int band = 1, saque = 1, puntoJugad1 = 0, puntoJugad2 = 0, juegoJugador1 = 0, juegoJugador2 = 0, desJuga1, desJuga2, jug1, jug2;
+        int band = 1, saque = 1, setJugador1 = 0, setJugador2 = 0, puntoJugad1 = 0, puntoJugad2 = 0, juegoJugador1 = 0, juegoJugador2 = 0, desJuga1, desJuga2, jug1, jug2;
         sets = jLabel_sets.getText();
         jugador1 = jLabel_jugador1.getText();
         jugador2 = jLabel_jugador2.getText();
@@ -130,11 +136,13 @@ public class Juego extends javax.swing.JFrame {
         destrezaJugador2 = jLabel_destrezaJugador2.getText();
         desJuga1 = Integer.parseInt(destreazaJugador1);
         desJuga2 = Integer.parseInt(destrezaJugador2);
+        
 
         //Indico a cuantos sets es
         if (sets.equals("Al mejor de 3")) {
-
+ 
             do {
+                jLabel_numeroDeSet.setText("SET N°: " + Integer.toString(band));
                 //Muestro quien saca
                 if (saque == 1) {
                     JOptionPane.showMessageDialog(null, "Saque de " + jugador1);
@@ -145,12 +153,13 @@ public class Juego extends javax.swing.JFrame {
                 //Comienza el juego
                 //Determino al ganador del punto
                 do {
-                    jug1 = (int) Math.random() * desJuga1;
-                    jug2 = (int) Math.random() * desJuga2;
-                } while (jug1 != jug2);
+                    jug1 = (int) (Math.random() * (desJuga1 - 1 + 1) + 1);
+                    jug2 = (int) (Math.random() * (desJuga2 - 1 + 1) + 1);
+                } while (jug1 == jug2);
 
                 //Le sumo el punto al ganador
                 if (jug1 > jug2) {
+                    JOptionPane.showMessageDialog(null, "Punto ganado por " + jugador1);
                     if (puntoJugad1 < 30) {
                         puntoJugad1 += 15;
                         jLabel_puntosJugador1.setText(Integer.toString(puntoJugad1));
@@ -164,6 +173,7 @@ public class Juego extends javax.swing.JFrame {
                         saque = 1;
                     }
                 } else if (jug2 > jug1) {
+                    JOptionPane.showMessageDialog(null, "Punto ganado por " + jugador2);
                     if (puntoJugad2 < 30) {
                         puntoJugad2 += 15;
                         jLabel_puntosJugador2.setText(Integer.toString(puntoJugad2));
@@ -181,38 +191,71 @@ public class Juego extends javax.swing.JFrame {
                 //Determino al ganador del juego
                 if (puntoJugad1 > 40 && puntoJugad2 < 40) {
                     juegoJugador1++;
-                    // hacer una pila aca
-                    JOptionPane.showMessageDialog(null, "El ganador de este juego es: " + jugador1
-                            + jugador1 + ": " + juegoJugador1
+                    puntoJugad1 = 0;
+                    puntoJugad2 = 0;
+                    jLabel_puntosJugador1.setText(Integer.toString(puntoJugad1));
+                    jLabel_puntosJugador2.setText(Integer.toString(puntoJugad2));
+                    JOptionPane.showMessageDialog(null, "El ganador de este juego es: " + jugador1 + "\n"
+                            + jugador1 + ": " + juegoJugador1 + "\n"
                             + jugador2 + ": " + juegoJugador2);
                 } else if (puntoJugad2 > 40 && puntoJugad1 < 40) {
                     juegoJugador2++;
-                    // hacer una pila aca
-                    JOptionPane.showMessageDialog(null, "El ganador de este juego es: " + jugador2
-                            + jugador1 + ": " + juegoJugador1
+                    puntoJugad1 = 0;
+                    puntoJugad2 = 0;
+                    jLabel_puntosJugador1.setText(Integer.toString(puntoJugad1));
+                    jLabel_puntosJugador2.setText(Integer.toString(puntoJugad2));
+                    JOptionPane.showMessageDialog(null, "El ganador de este juego es: " + jugador2 + "\n"
+                            + jugador1 + ": " + juegoJugador1 + "\n"
                             + jugador2 + ": " + juegoJugador2);
                 } else if (puntoJugad1 == 40 && puntoJugad2 == 40) {
                     int desempate = deuce(jug1, jug2, desJuga1, desJuga2, saque, jugador1, jugador2);
                     if (desempate == 1) {
                         juegoJugador1++;
-                        // hacer una pila aca
-                        JOptionPane.showMessageDialog(null, "El ganador de este juego es: " + jugador1
-                                + jugador1 + ": " + juegoJugador1
+                        puntoJugad1 = 0;
+                        puntoJugad2 = 0;
+                        jLabel_puntosJugador1.setText(Integer.toString(puntoJugad1));
+                        jLabel_puntosJugador2.setText(Integer.toString(puntoJugad2));
+                        JOptionPane.showMessageDialog(null, "El ganador de este juego es: " + jugador1 + "\n"
+                                + jugador1 + ": " + juegoJugador1 + "\n"
                                 + jugador2 + ": " + juegoJugador2);
                     } else {
                         juegoJugador2++;
-                        // hacer una pila aca
-                        JOptionPane.showMessageDialog(null, "El ganador de este juego es: " + jugador2
-                                + jugador1 + ": " + juegoJugador1
+                        puntoJugad1 = 0;
+                        puntoJugad2 = 0;
+                        jLabel_puntosJugador1.setText(Integer.toString(puntoJugad1));
+                        jLabel_puntosJugador2.setText(Integer.toString(puntoJugad2));
+                        JOptionPane.showMessageDialog(null, "El ganador de este juego es: " + jugador2 + "\n"
+                                + jugador1 + ": " + juegoJugador1 + "\n"
                                 + jugador2 + ": " + juegoJugador2);
                     }
                 }
-
                 //Determino al ganador del set
+
+                if (juegoJugador1 > 6 && juegoJugador2 <= juegoJugador1 - 2) {
+                    JOptionPane.showMessageDialog(null, "El ganador de este set es: " + jugador1);
+                    setJugador1++;
+                    juegoJugador1 = 0;
+                    juegoJugador2 = 0;
+                    band++;
+                } else if (juegoJugador2 > 6 && juegoJugador1 <= juegoJugador2 - 2) {
+                    JOptionPane.showMessageDialog(null, "El ganador de este set es: " + jugador2);
+                    setJugador2++;
+                    juegoJugador1 = 0;
+                    juegoJugador2 = 0;
+                    band++;
+                }
             } while (band < 4);
+
+            //Determino al ganador del partido
+            if (setJugador1 > setJugador2) {
+                jLabel_ganador.setText("EL GANADOR ES: " + jugador1);
+            } else {
+                jLabel_ganador.setText("EL GANADOR ES: " + jugador2);
+            }
+
         } else {
-            do {
-            } while (band < 6);
+
+            JOptionPane.showConfirmDialog(null, "nup");
 
         }
     }//GEN-LAST:event_jButton_jugarActionPerformed
@@ -258,10 +301,11 @@ public class Juego extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel_Wallpaper;
     public static javax.swing.JLabel jLabel_destrezaJugador1;
     public static javax.swing.JLabel jLabel_destrezaJugador2;
-    private javax.swing.JLabel jLabel_ganadorDelGame;
+    public static javax.swing.JLabel jLabel_ganador;
     public static javax.swing.JLabel jLabel_jugador1;
     public static javax.swing.JLabel jLabel_jugador2;
     public static javax.swing.JLabel jLabel_nombreTorneo;
+    public static javax.swing.JLabel jLabel_numeroDeSet;
     public static javax.swing.JLabel jLabel_puntosJugador1;
     public static javax.swing.JLabel jLabel_puntosJugador2;
     public static javax.swing.JLabel jLabel_sets;
