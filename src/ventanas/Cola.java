@@ -54,7 +54,7 @@ public class Cola {
         }
     }
 
-    //Método para mostrar contenido de la cola min9:22
+    //Método para mostrar contenido de la cola
     public String mostrarContenido() {
         Nodo recorrido = inicioCola;
         String colaInvertida = "";
