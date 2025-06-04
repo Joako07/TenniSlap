@@ -6,6 +6,7 @@ El proyecto fue desarrollado utilizando el entorno de desarrollo NetBeans, junto
 
 ---------------------------------------------------------------------------------------------------------------------------------
 Usuario:player
+
 Password:123
 
 NetBeans
